@@ -112,7 +112,7 @@ tripDurationAgeAnalysis <- function() {
   summary(chi$age)
 
   #Plot trip duration per age group. Also add mean and quantiles
-  ggplot(aes(x=age,y=Trip.Duration),data=chi)+
+  ggplot(aes(x=age,y=Trip.Duration),data=subset(chi,!is.na(age)))+
     geom_jitter(alpha=1/20,
                 color='red')+
     xlim(20,72)+
@@ -142,7 +142,7 @@ customerTypeAgeAnalysis <- function() {
 
   #Set upper and lower limit to exclude the outliers from the data as this is less representative of the groups
   qplot(User.Type,
-        age,data=chi,
+        age,data=subset(chi,!is.na(age)),
         geom='boxplot',
         main = 'Age of Customer Types')+
     coord_cartesian(ylim   = c(30,55))+
