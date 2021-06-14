@@ -25,7 +25,7 @@ createDateColumns <- function(d) {
   return(d)
 }
 
-question1 <- function() {
+monthlyRentalAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
@@ -60,7 +60,7 @@ question1 <- function() {
 }
 
 
-question2 <- function() {
+weeklyRentalAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
@@ -99,7 +99,7 @@ question2 <- function() {
     theme(plot.title = element_text(hjust = 0.5))
 }
 
-question3 <- function() {
+tripDurationAgeAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
@@ -126,7 +126,7 @@ question3 <- function() {
          y = "Trip Duration") 
 }
   
-question4 <- function() {
+customerTypeAgeAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
