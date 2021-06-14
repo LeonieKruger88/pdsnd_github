@@ -1,6 +1,6 @@
 # Exploring Bike Sharing Data
 __________________________________________________________________________________________________________________________
-## Published 14 June 2021
+### Published 14 June 2021
 Exploring Bike Sharing Data project was initially created for analysing bikes sharing data provided by Motivate, a bike share provider for many cities in the United States.
 
 ## Initial Setup
