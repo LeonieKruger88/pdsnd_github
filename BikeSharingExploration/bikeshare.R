@@ -25,7 +25,7 @@ createDateColumns <- function(d) {
   return(d)
 }
 
-question1 <- function() {
+monthlyRentalAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
@@ -60,7 +60,7 @@ question1 <- function() {
 }
 
 
-question2 <- function() {
+weeklyRentalAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
@@ -99,7 +99,7 @@ question2 <- function() {
     theme(plot.title = element_text(hjust = 0.5))
 }
 
-question3 <- function() {
+tripDurationAgeAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
@@ -112,7 +112,7 @@ question3 <- function() {
   summary(chi$age)
 
   #Plot trip duration per age group. Also add mean and quantiles
-  ggplot(aes(x=age,y=Trip.Duration),data=chi)+
+  ggplot(aes(x=age,y=Trip.Duration),data=subset(chi,!is.na(age)))+
     geom_jitter(alpha=1/20,
                 color='red')+
     xlim(20,72)+
@@ -126,7 +126,7 @@ question3 <- function() {
          y = "Trip Duration") 
 }
   
-question4 <- function() {
+customerTypeAgeAnalysis <- function() {
   #Read datasets
   ny=read.csv('new-york-city.csv')
   wash=read.csv('washington.csv')
@@ -142,7 +142,7 @@ question4 <- function() {
 
   #Set upper and lower limit to exclude the outliers from the data as this is less representative of the groups
   qplot(User.Type,
-        age,data=chi,
+        age,data=subset(chi,!is.na(age)),
         geom='boxplot',
         main = 'Age of Customer Types')+
     coord_cartesian(ylim   = c(30,55))+
